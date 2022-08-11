@@ -25,7 +25,7 @@ services:
             - node-network
     db:
         image: mysql:5.7
-        command: --innodb-use-native-aio=0
+        command: --innodb-use-native-aio=0 && --init-file /var/lib/mysql/init.sql
         container_name: db
         restart: always
         tty: true
