@@ -1,7 +1,5 @@
 const express = require("express");
-
-const app = express();
-const port = 3000;
+const mysql = require('mysql');
 
 const config = {
     host: 'db',
@@ -10,7 +8,9 @@ const config = {
     database: 'nodedb',
 };
 
-const mysql = require('mysql');
+const app = express();
+const port = 3000;
+
 const connection = mysql.createConnection(config);
 
 const sql = `INSERT INTO people(nome) VALUES ('Diego');`;
